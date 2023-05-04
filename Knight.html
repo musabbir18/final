@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Bite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Rubik+Spray+Paint&family=Sigmar+One&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+
+        }
+
+        .bar {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 15ch;
+         width: 100%;
+      }
+
+      nav {
+         position: fixed;
+         background-color: rgba(0, 0, 0, 0.236);
+
+      }
+
+      .navbar li {
+         list-style-type: none;
+         display: inline;
+         margin: 0px 10px;
+         cursor: pointer;
+         transition: all .5s;
+      }
+
+      .navbar a {
+         color: white;
+         font-size: 2.25ch;
+         margin-right: 2.5ch;
+         text-decoration: none;
+         font-family: 'Varela Round', sans-serif;
+         transition: all .5s;
+      }
+
+      a:hover {
+         color: rgb(119, 49, 184);
+      }
+
+      .logo {
+         margin: 0px 70px;
+         align-items: center;
+         margin-top: 10px;
+      }
+
+        .image-content {
+            position: absolute;
+            top: 150px;
+            left: 300px;
+            display: flex;
+            color: #fff;
+            font-family: nicotineregular;
+            padding-top: 30vh;
+            font-size: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all .4s;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        button {
+            position: absolute;
+            top: 600px;
+            left: 300px;
+            color: white;
+            width: 15em;
+            height: 3em;
+            background: rgb(255, 86, 114);
+            border-radius: 10px;
+            border: none;
+            margin-left: 37em;
+        }
+
+        .app {
+            position: absolute;
+            top: 700px;
+            left: 650px;
+            height: 65px;
+            width: 200px;
+        }
+
+        .play {
+            position: absolute;
+            top: 665px;
+            left: 940px;
+            height: 75px;
+            width: 200px;
+            margin-top: 30px;
+            padding-top: 10px;
+        }
+
+        .download {
+            margin-left: 350px;
+        }
+
+        .feature h1 {
+            font-family: nunito;
+            color: #424242;
+            font-size: 55px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+        }
+
+        .features {
+            margin-top: 70px;
+            height: fit-content
+        }
+
+        .feature-container {
+            margin-left: 170px;
+            display: inline-block;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: center;
+            width: 160px
+        }
+
+        .feature-container:last-child {
+            margin-top: 30px;
+            width: 150px
+        }
+
+        .feature-container:nth-child(2) .feature-description {
+            margin-bottom: 40px
+        }
+
+
+        .feature-container img {
+            margin: 0 auto auto;
+            height: 220px;
+            width: 220px;
+            margin: 20px;
+
+
+        }
+
+        .feature-description {
+            margin-left: 50px;
+            font-size: 15px;
+            text-align: center;
+            width: 100%;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+
+        .banner-1 {
+            background: url(./Image/banner1.jpg);
+            width: 100%;
+            height: 100vh;
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        h3 {
+            display: flex;
+            padding: 250px;
+            top: 200px;
+        }
+
+        .banner-1>h3 {
+            display: flex;
+            color: #fff;
+            width: 1268px;
+            margin: 0 auto;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            font-family: nicotineregular;
+            font-size: 6em;
+            text-transform: uppercase
+        }
+
+        .banner-2 {
+            background: url(./Image/banner-2.webp);
+            width: 100%;
+            height: 100vh;
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .banner-2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner-2>h3 {
+            text-align: center;
+            margin: auto;
+            color: #fff;
+            width: 1268px;
+            font-family: nicotineregular;
+            font-size: 6em;
+            text-transform: uppercase
+        }
+
+        .banner-2>.menu-btn {
+            position: absolute;
+            top: 3100px;
+            left: 800px;
+            margin: 0 auto 100px;
+            width: 250px;
+            border: 1.3px solid #fff;
+            outline: none;
+            background: 0 0;
+            padding: 7px;
+            font-weight: 600;
+            font-size: 30px;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer
+        }
+
+
+        .container {
+
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            background-color: rgba(240, 128, 128, 0);
+            color: rgb(13, 13, 13);
+            display: grid;
+            grid-template-columns: 400px 400px auto;
+            /* grid-template-columns: 1fr 1fr; */
+            /* grid-template-rows: repeat(2,auto); */
+            grid-template-rows: 1fr, 2fr;
+
+        }
+
+        .items {
+            /* border: 1px solid  rgb(3, 185, 241); */
+
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 20px;
+
+        }
+
+        .item1-flex {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .mail {
+            background-image: url(https://nrzl4apc.knight-bite.com/main/res/index/mail_icon.svg);
+            height: 30px;
+            width: 30px;
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
+            margin-right: 20px;
+        }
+
+        .call img {
+            height: 30px;
+            width: 30px;
+            /* background: url(https://nrzl4apc.knight-bite.com/main/res/index/phone_icon.svg); */
+        }
+
+        .items div a {
+            color: gray;
+            font-size: 20px;
+            margin: 5px;
+
+
+        }
+
+        .input-feild {
+            display: flex;
+            justify-self: center;
+            align-items: center;
+        }
+
+        .ficons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+        }
+
+        .ficons img {
+            margin: 20px;
+            cursor: pointer;
+            transition: all 1s ease-out;
+
+        }
+
+        .ficon img:hover {
+            transform: scale(1.2);
+        }
+
+        .input-feild img:hover {
+            transition: all 1s;
+            transform: scale(1.2);
+        }
+
+        .mail-content {
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            flex-direction: column;
+
+        }
+
+        .call {
+            margin-top: 30px;
+        }
+
+        .footer-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #foot {
+            margin: 50px 40px;
+        }
+
+        .copy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #C77BF4 0%, #FF5672 100%);
+            box-shadow: -5px -5px 19px rgba(0, 0, 0, .23);
+            height: 50px;
+            width: 100vw;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .msg {
+            position: fixed;
+            top: 850px;
+            left: 1820px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bar">
+        <div class="logo"><img width="130ch" src="https://nrzl4apc.knight-bite.com/main/res/brand-logo.svg"
+                alt="Kinte-Bite-logo"></div>
+
+        <div class="navbar">
+
+            <li><a href="http://127.0.0.1:5555/Knight.html">Home</a></li>
+            <li><a href="http://127.0.0.1:5555/about.html">About</a></li>
+            <li><a href="http://127.0.0.1:5555/menu.html">Menu</a></li>
+            <li><a href="http://127.0.0.1:5555/franchies.html">Franchise</a></li>
+        </div>
+    </nav>
+    <div class="image">
+        <img width="100%" height="1000px" src="./Image/backg.avif" alt="">
+    </div>
+    <div class="image-content">
+        <h1 style="font-family: 'Lemon', cursive;
+        font-family: 'Rubik Spray Paint', cursive;
+        font-family: 'Sigmar One', cursive;">ORDER LATE NIGHT MEALS</h1>
+    </div>
+    <button>Order Now</button>
+    <h1 style="text-align:center; position: absolute; top: 650px;left: 880px; color: white;">Or</h1>
+    <div class="download"><img class="app" src="./Image/android.webp" alt="">
+        <img class="play" src="./Image/apple.png" alt="">
+    </div>
+    <br>
+    <br>
+    <div class="feature">
+        <h1>Feature</h1>
+
+        <div class="feature-grid">
+            <div class="feature-container">
+                <img src="./Image/feature-1.svg" alt="">
+                <div class="feature-description">Late Night Delivary <br> Till 4 am</div>
+            </div>
+            <div class="feature-container">
+                <img src="./Image/feature-2.svg" alt="">
+                <div class="feature-description">Order on App Or<br>Call 080-4710607</div>
+            </div>
+            <div class="feature-container">
+                <img src="./Image/feature-3.svg" alt="">
+                <div class="feature-description">Delivery within 40<br>mins</div>
+            </div>
+            <div class="feature-container">
+                <img src="./Image/feature-4.svg" alt="">
+                <div class="feature-description">Food For every kind of<br>Hunger</div>
+            </div>
+            <div class="feature-container">
+                <img src="./Image/feature-5.svg" alt="">
+                <div class="feature-description">Place bulk order through<br>app</div>
+            </div>
+        </div>
+    </div>
+    <div class="banner-1">
+        <h3>Enjoy food, enjoy life</h3>
+    </div>
+    <div class="banner-2">
+        <h3>Burger, fries, shakes and many more</h3>
+        <button class="menu-btn">See Full Menu</button>
+    </div>
+    <br>
+    <h1 style="color: #424242;font-size: 55px;font-weight: 700;font-family: nunito; text-align: center;">Connect with us</h1>
+  
+ 
+    <div class="container">
+     <div  class="items"><h2 style="margin-bottom: 40px;color: #424242;font-size: 30px;font-weight: 700;font-family: nunito; text-align: start;">Contact us</h2>
+     <div class="mail-content">
+         <div class="mail"></div>
+         <span>info@knight-bite.com</span>
+     
+     <div class="call"> <img src="./Image/phone_icon.svg" alt="">
+       <span>+91 8047106107</span>
+     </div>
+     <p>Available from 7pm to 4am</p>
+     </div>
+     </div>
+     <div  class="items">
+      <h2 style="margin-bottom: 40px;color: #424242;font-size: 30px;font-weight: 700;font-family: nunito; text-align: start;"> Quick Links </h2>
+        
+        <div>
+         <a style="text-decoration: none;color: #FF5672;" href=""><li style="text-decoration: none;">Delevery Polices</li></a>
+         <a style="text-decoration: none; color: #FF5672;" href=""><li>Privacy Polices</li></a>
+         <a style="text-decoration: none;" href=""><li>Careers (Coming soon)</li></a>
+         <a style="text-decoration: none; color: #FF5672;" href=""><li>Franchise</li></a>
+        </div>
+     
+     </div>
+     <div  class="items"><p style=" width: 100%;line-height: 2em;text-align: start;font-size: 20px;">Enter your email address below to be the first to know everything about us, where we’ll be <br> next, and how you can come along! <br>
+       Join us on our adventure.</p>
+       <br>
+      <div class="input-feild"> <input style="border-radius: 50px;width: 450px;height: 80px;font-size: 20px;text-align: center; " placeholder="Enter your email address" type="email">
+       <img style="width: 80px;height: 80px; margin-left: -70px; "src="./Image/email-btn.svg" alt=""></div>
+     </div>
+     <div  class="items"> <h2 style="margin-bottom: 40px;color: #424242;font-size: 30px;font-weight: 700;font-family: nunito; text-align: start;">Head Office</h2>
+       <p style=" width: 100%;line-height: 2em;text-align: start;">1st Floor, No 20-1-7/10, Regal Square Azizuddin Road, Bunder Mangalore, Bunder, Mangaluru, Dakshina Kannada, Karnataka, 575001</p>
+     </div>
+     <div class="items"><h4 style="margin-bottom: 40px;color: #424242;font-size: 30px;font-weight: 700;font-family: nunito; text-align: start;">Locations</h4>
+     <p style=" width: 100%;line-height: 2em;text-align: start;">Bengaluru  Mangalore Mysuru <br>
+       Hyderabad Hubli  Manipal  Udupi</p>
+     </div>
+     <div class="items"><h4 style="margin-bottom: 40px;color: #424242;font-size: 30px;font-weight: 700;font-family: nunito; text-align: start;">Follow us</h4>
+   <div class="ficons">
+     <img src="./Image/facebook.svg" alt="">
+     <img src="./Image/instagram.svg" alt="">
+     <img src="./Image/twitter.svg" alt="">
+     <img src="./Image/linkedin.svg" alt="">
+     <img src="./Image/youtube.svg" alt=""></div>
+     </div>
+   </div>
+   <div class="footer-img">
+     <img  src="./Image/brand_logo-1_footer.svg" alt="">
+     <img id="foot" src="./Image/brand_logo-2_footer.svg" alt="">
+   </div>
+   <div class="copy">
+     <p>Ⓒ Copyright 2023. Knight Bite Foods Pvt. Ltd. All Rights Reserved</p>
+   </div>
+   <div class="msg"><img  style="width: 60px;
+     height: 60px;" src="./Image/msglogo.png" alt=""></div>
+
+</body>
+
+</html>
